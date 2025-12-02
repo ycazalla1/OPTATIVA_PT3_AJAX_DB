@@ -4,7 +4,7 @@ export const pool = mysql.createPool({
   host: 'localhost',     // o la IP del contenedor MySQL
   port: 3308,
   user: 'root',          // tu usuario MySQL
-  password: '1234',
+  password: '2003',
   database: 'webdb',
   waitForConnections: true,
   connectionLimit: 10,

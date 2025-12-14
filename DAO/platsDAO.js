@@ -1,0 +1,1 @@
+// Operacions sencilles de base de dades (No ficar lógica de negoci aquí)

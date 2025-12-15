@@ -16,6 +16,7 @@ async function carregarPlats() {
   const tbody = document.querySelector("table tbody");
   tbody.innerHTML = "";
 
+  
   if (plats.length === 0) {
     tbody.innerHTML =
       `<tr><td colspan="6" class="nota">Encara no hi ha plats</td></tr>`;
@@ -28,6 +29,7 @@ async function carregarPlats() {
 function mostrarPlat(p) {
   const tbody = document.querySelector("table tbody");
 
+  console.log(p);
   const tr = document.createElement("tr");
   tr.innerHTML = `
     <td>${p.id}</td>
@@ -46,9 +48,17 @@ function mostrarPlat(p) {
 async function eliminarPlat(id) {
   if (!confirm("Eliminar plat?")) return;
 
-  await fetch(`/api/plats_combinats/${id}`, { method: "DELETE" });
-  carregarPlats();
+  try {
+    const res = await fetch(`/api/plats_combinats/${id}`, { method: "DELETE" });
+    if (!res.ok) throw new Error("No s'ha pogut eliminar el plat");
+    carregarPlats(); // recarga la tabla
+  } catch (err) {
+    console.error(err);
+    alert(err.message);
+  }
 }
+
+
 
 // FORM
 document.querySelector("form").addEventListener("submit", async e => {
@@ -69,9 +79,30 @@ document.querySelector("form").addEventListener("submit", async e => {
     ...(MAPA_ALLERGENS[acomp2.value] || [])
   ];
 
-  e.target.reset();
-  carregarPlats(); // recarga la tabla
+  // 🔹 Enviar datos al backend
+  try {
+    const res = await fetch("/api/plats_combinats", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        nom,
+        acompanamient1: acomp1.nextElementSibling.textContent.trim(),
+        acompanamient2: acomp2.nextElementSibling.textContent.trim(),
+        alergies: [...new Set(alergies)].join(", "),
+        preu
+      })
+    });
+
+    if (!res.ok) throw new Error("No s'ha pogut guardar el plat");
+
+    e.target.reset();   // limpiar formulario
+    carregarPlats();    // recargar tabla
+  } catch (err) {
+    console.error(err);
+    alert(err.message);
+  }
 });
+
 
 
 

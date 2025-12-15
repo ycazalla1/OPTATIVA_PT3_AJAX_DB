@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestió de Comandes i Al·lèrgens - La Cantina</title>
+    <link rel="stylesheet" href="CSS/style_seleccioPlats.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h2 class="logo">La Cantina</h2>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="alergies.html">Al·lèrgens</a></li>
+                    <li><a href="gestio_begudes.html">Gestio Begudes</a></li>
+                    <li><a href="login_client.html">Login Client</a></li>
+                    <li><a href="magatzem.html">Magatzem</a></li>
+                    <li><a href="menuSetmanal.html">Menu Setmanal</a></li>
+                    <li><a href="Plats_Combinats.html">Plats Combinats</a></li>
+                    <li><a href="plats_combinats2.html">Plats_Combinats2</a></li>
+                    <li><a href="registre_admin.html">Registre Admin</a></li>
+                    <li><a href="registre_client.html">Registre Client</a></li>
+                    <li><a href="usuaris.html">Usuaris</a></li>
+                    <li><a href="#" onclick="mostrarVista('client')">Seleccio plats</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div id="vista-client" class="container" style="display: block;">
+        
+        <form id="formularioComanda" class="client-form">
+            <h1>Selecció de Productes (Carta)</h1>
+            
+            <fieldset>
+                <legend>1. Tria un Producte Base:</legend>
+                <div class="seleccio-visual" id="seleccioBaseClient">
+                    </div>
+            </fieldset>
+
+            <fieldset id="complements-fieldset" style="display: none;">
+                <legend>2. Complements i Begudes (Opcional):</legend>
+                
+                <label for="begudaOpcionalClient">Afegeix Beguda o Cafè:</label>
+                <select id="begudaOpcionalClient">
+                    <option value="">-- No triar beguda --</option>
+                    </select>
+                <br>
+                <div style="margin-top: 15px;">
+                    <label for="add_llet_client" style="display: inline-flex; align-items: center; gap: 8px;">
+                        <input type="checkbox" id="add_llet_client" style="width: auto;">
+                        Afegir **Llet** (Làctics) al Cafè. (+0.20€)
+                    </label>
+                </div>
+            </fieldset>
+            
+            <button type="submit" id="afegir-comanda">➕ Afegir a la Comanda</button>
+        </form>
+
+        <hr class="separator">
+
+        <section class="comanda-resum">
+            <h2>📝 El Teu Resum de Comanda</h2>
+            <div id="llistaComanda" class="lista-platos">
+                <p class="nota">La comanda està buida.</p>
+            </div>
+            <div id="comandaTotal" class="total-display">
+                Total: 0.00 €
+            </div>
+        </section>
+    </div>
+
+    <div id="vista-admin" class="container" style="display: none;">
+        <form id="formularioPlato">
+            <h1>Registre de Plat Combinat (Admin) 🔐</h1>
+            <label for="nombrePlato">Nom del Plat/Producte:</label>
+            <input type="text" id="nombrePlato" name="nombrePlato" required>
+            
+            <fieldset>
+                <legend>1. Tria el Producte Base:</legend>
+                <div class="seleccio-visual" id="seleccioBaseAdmin"></div>
+            </fieldset>
+
+            <fieldset>
+                <legend>2. Complements (Cafè/Beguda):</legend>
+                
+                <label for="begudaOpcionalAdmin">Afegeix Beguda o Cafè:</label>
+                <select id="begudaOpcionalAdmin">
+                    </select>
+                <br>
+
+                <div style="margin-top: 15px;">
+                    <label for="add_llet_admin" style="display: inline-flex; align-items: center; gap: 8px;">
+                        <input type="checkbox" id="add_llet_admin" name="add_llet" style="width: auto;">
+                        Afegir **Llet** (Làctics) a qualsevol beguda.
+                    </label>
+                </div>
+            </fieldset>
+            <button type="submit">Registrar Al·lèrgens del Plat</button>
+        </form>
+        
+        <section style="margin-top: 30px;">
+            <h2>Plats Registrats (Al·lèrgens)</h2>
+            <div id="salidaPlatos" class="lista-platos">
+                <p class="nota">Carregant dades...</p>
+            </div>
+            <p style="font-size: 0.75em; color: var(--muted); text-align: center; margin-top: 15px;">*Les dades es guarden al navegador.</p>
+        </section>
+    </div>
+
+    <script src="JS/scripts_seleccioPlats.js"></script>
+    <script src="JS/script_menus.js"></script>
+</body>
+</html>

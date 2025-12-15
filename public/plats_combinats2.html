@@ -10,7 +10,7 @@
     <header>
       <div class="header-container">
         <h1 class="logo">La Cantina</h1>
-        <nav>
+        <!-- <nav>
           <ul class="nav-menu">
             <li><a href="alergies.html">Al·lèrgens</a></li>
             <li><a href="gestio_begudes.html">Gestio Begudes</a></li>
@@ -23,7 +23,7 @@
             <li><a href="seleccio_plats_user_admin.html">Seleccio Plats</a></li>
             <li><a href="usuaris.html">Usuaris</a></li>
           </ul>
-        </nav>
+        </nav> -->
       </div>
     </header>
 
@@ -32,8 +32,7 @@
     <div class="container">
       <h1>Plats Combinats</h1>
 
-      <!-- TAULA -->
-      <table>
+      <!-- <table>
         <thead>
           <tr>
             <th>Plat Principal</th>
@@ -44,7 +43,23 @@
             <th>Accions</th>
           </tr>
         </thead>
-        <tbody></tbody>
+        <tbody id="tabla-plats"></tbody>
+      </table> -->
+
+      <!-- TAULA -->
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Plat Principal</th>
+            <th>Acompanyament 1</th>
+            <th>Acompanyament 2</th>
+            <th>Al·lèrgens</th>
+            <th>Preu</th>
+            <th>Accions</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-combinats"></tbody>
       </table>
 
       <!-- FORMULARI -->
@@ -62,17 +77,15 @@
           <div class="seleccio-visual">
             <input type="radio" id="acomp1_patates" name="acomp1" value="patates_base" required>
             <label for="acomp1_patates">
-              <span class="icona-producte">🍟</span> Patates fregides
-            </label>
+              <span class="icona-producte">🍟</span> Patates fregides</label>
 
             <input type="radio" id="acomp1_ou" name="acomp1" value="ou_fregit">
             <label for="acomp1_ou">
-              <span class="icona-producte">🍳</span> Ou fregit
-            </label>
-            <input type="radio" name="acomp1_bacon" id="acomp1" value="carn">
+              <span class="icona-producte">🍳</span> Ou fregit</label>
+
+            <input type="radio" id="acomp1_bacon" name="acomp1" value="carn">
             <label for="acomp1_bacon">
-              <span class="icona-producte">🥓</span> Bacon
-            </label>
+              <span class="icona-producte">🥓</span> Bacon</label>
         
 
           </div>
@@ -95,8 +108,6 @@
             <label for="acomp2_amanida_pasta">
               <span class="icona-producte">🥗🍝</span> Amanida de pasta
             </label>
-             Espagueti Emoji
-
           </div>
         </label>
 
@@ -110,7 +121,12 @@
       </form>
     </div>
 
-    <script src="JS/srcipts_plats_combinats.js"></script>
-    <script src="JS/script_menus.js"></script>
+    <!-- ORIGINALES -->
+    <!-- <script src="JS/scripts_plats_combinats.js"></script> -->
+    <!-- <script src="JS/plats.js"></script> -->
+
+    <script src="JS/combinats.js"></script>
+    <script src="JS/plat.js"></script>
+    
   </body>
 </html>

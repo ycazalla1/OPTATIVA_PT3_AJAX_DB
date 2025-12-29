@@ -1,6 +1,6 @@
 import mysql from 'mysql2/promise';
 
-export const pool = mysql.createPool({
+const pool = mysql.createPool({
   host: 'localhost',     // o la IP del contenedor MySQL
   port: 3308,
   user: 'root',          // tu usuario MySQL
@@ -11,6 +11,7 @@ export const pool = mysql.createPool({
   queueLimit: 0
 });
 
+export default pool;
 
 
 // //EXEMPLE

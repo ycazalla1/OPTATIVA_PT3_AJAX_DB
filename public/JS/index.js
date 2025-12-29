@@ -23,7 +23,6 @@ function mostrarVista(vista) {
 
 
 // --- LÓGICA DE VISTA CLIENT (COMANDA) ---
-
 function renderComanda() {
     const llistaComandaDiv = document.getElementById('llistaComanda');
     const comandaTotalDiv = document.getElementById('comandaTotal');

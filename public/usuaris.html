@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="CSS/usuaris_styles.css">
+        <title>Gestió d'usuaris</title>
+    </head>
+    <body>
+        <header>
+            <div class="header-container">
+                <h1 class="logo">La Cantina</h1>
+                <nav>
+                    <ul class="nav-menu">
+                        <!-- <li><a href="alergies.html">Al·lèrgens</a></li>
+                        <li><a href="gestio_begudes.html">Gestio Begudes</a></li>
+                        <li><a href="login_client.html">Login Client</a></li>
+                        <li><a href="magatzem.html">Magatzem</a></li>
+                        <li><a href="menuSetmanal.html">Menu Setmanal</a></li>
+                        <li><a href="Plats_Combinats.html">Plats Combinats</a></li>
+                        <li><a href="plats_combinats2.html">Plats_Combinats2</a></li>
+                        <li><a href="registre_admin.html">Registre Admin</a></li>
+                        <li><a href="registre_client.html">Registre Client</a></li>
+                        <li><a href="seleccio_plats_user_admin.html">Seleccio Plats</a></li> -->
+                        <li><a href="index.html">Menú Cantina</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="container">
+            <div class="title-container">
+                <h1>Gestió d'usuaris</h1>
+                <button id="afegir" title="Afegir usuari">➕</button>
+            </div>
+            <table border="1" cellpadding="5" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Cognom</th>
+                        <th>Email</th>
+                        <th>Contrasenya</th>
+                        <th>Rol</th>
+                        <th>Accions</th>
+                    </tr>
+                </thead>
+            <tbody>
+                <tr></tr>
+                <tr></tr>
+            </tbody>
+            </table>
+
+            <dialog id="userForm">
+                <form method="dialog" id="addUserForm">
+                    <h2>Afegir usuari</h2>
+                    <div>
+                        <label for="nom">Nom:</label>
+                        <input type="text" id="nom" name="nom" required>
+                    </div>
+                    
+                    <div>
+                        <label for="cognom">Cognom:</label>
+                        <input type="text" id="cognom" name="cognom" required>
+                    </div>
+                    
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div>
+                        <label for="contrasenya">Contrasenya:</label>
+                        <input type="password" id="contrasenya" name="contrasenya" required>
+                    </div>
+                    
+                    <div>
+                        <label for="rol">Rol:</label>
+                        <select id="rol" name="rol" required>
+                            <option value="">Selecciona rol</option>
+                            <option value="admin">Administrador</option>
+                            <option value="professor">professor/a</option>
+                            <option value="alumne">Alumne/a</option>
+                    
+                        </select>
+                    </div>
+
+                    <div class="dialog-buttons">
+                        <button type="submit">Afegir</button>
+                        <button type="button" id="closeForm">Cancelar</button>
+                    </div>
+                </form>
+            </dialog>
+        </div>
+        <script src="JS/script_usuaris.js"></script>
+        <script src="JS/script_menus.js"></script>
+    </body>
+</html>

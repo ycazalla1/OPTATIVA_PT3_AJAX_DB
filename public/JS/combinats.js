@@ -21,10 +21,10 @@ async function carregarMenu() {
     return;
   }
 
-  plats.forEach(p => mostrarMenu(p));
+  plats.forEach(p => mostrarBeguda(p));
 }
 
-function mostrarMenu(p) {
+function mostrarBeguda(p) {
   const tbody = document.querySelector("table tbody");
 
   console.log(p);

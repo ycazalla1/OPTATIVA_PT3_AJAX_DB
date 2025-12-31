@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="CSS/styles.css">
+        <title>Formulari de registre</title>
+    </head>
+    <body>
+      <header>
+       <div class="header-container">
+        <h1 class="logo">La Cantina</h1>
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="login_client.html">Log-in</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <form id="registre_client">
+        <h2>Formulari de registre</h2>
+        <div>
+            <label for="nom">Nom:</label>
+            <input type="text" id="nom" placeholder="Introdueix-hi el seu nom" required>
+        </div>
+        <div>
+            <label for="cognom">Cognom:</label>
+            <input type="text" id="cognom" placeholder="Introdueix-hi el seu cognom" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Introdueix-hi el seu correu electrònic" required>
+        </div>
+        <div>
+            <label for="contrasena">Constrasenya:</label>
+            <input type="password" id="contrasena" placeholder="Introdueix-hi la seva contrasenya" required>
+            <label for="confirmar_contrasena">Confirmar contrasenya:</label>
+            <input type="password" id="confirmar_contrasena" placeholder="Confirmi la seva contrasenya:" required>
+        </div>
+        <div>
+            <label>Rol:</label>
+            <select id="rol" name="rol">
+                <option value="alumne">Alumne/a</option>
+                <option value="professor">Professor/a</option>
+            </select>
+        </div>
+        <label id="missatge"></label>
+        <button type="submit">Registrar-se</button>
+    </form>
+    <script src="JS/scripts_signin.js"></script>
+    <!-- <script src="JS/script_menus.js"></script> -->
+    </body>
+</html>

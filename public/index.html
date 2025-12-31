@@ -12,17 +12,14 @@
         <h1 class="logo">La Cantina</h1>
         <nav>
           <ul class="nav-menu">
-            <!-- <li><a href="alergies.html">Al·lèrgens</a></li>
-            <li><a href="gestio_begudes.html">Gestio Begudes</a></li>
+            <li><a href="alergies.html">Al·lèrgens</a></li>
+            <li><a href="gestio_begudes.html">Gestió de Begudes</a></li>
             <li><a href="login_client.html">Login Client</a></li>
-            <li><a href="magatzem.html">Magatzem</a></li>
+            <!-- <li><a href="magatzem.html">Magatzem</a></li> -->
             <li><a href="menuSetmanal.html">Menu Setmanal</a></li>
-            <li><a href="Plats_Combinats.html">Plats Combinats</a></li>
-            <li><a href="registre_admin.html">Registre Admin</a></li>
+            <li><a href="plats_combinats.html">Plats Combinats</a></li>
             <li><a href="registre_client.html">Registre Client</a></li>
-            <li><a href="seleccio_plats_user_admin.html">Seleccio Plats</a></li> -->
             <li><a href="usuaris.html">Usuaris</a></li>
-            <li><a href="plats_combinats.html">Plats combinats</a></li>
           </ul>
         </nav>
       </div>
@@ -56,43 +53,13 @@
         <label>
           Plat + acompayaments:
           <div class="seleccio-visual" id="plats_combinats">
-              <!-- <input type="radio" id="acomp1_patates" name="menuCantina" value="patates_base" required>
-              <label for="acomp1_patates">
-                <span class="icona-producte">🍟</span> Patates fregides </label>
-              
-              <input type="radio" id="acomp1_ou" name="menuCantina" value="ou_fregit">
-              <label for="acomp1_ou">
-                <span class="icona-producte">🍳</span> Ou fregit</label>
-              
-              <input type="radio" id="acomp1_bacon" name="menuCantina" value="carn">
-              <label for="acomp1_bacon">
-                <span class="icona-producte">🥓</span> Bacon </label> -->
           </div>
         </label>
 
         <!-- Beguda -->
         <label>
           Beguda:
-          <div class="seleccio-visual">
-            <input type="radio" id="beguda_refresc_suc" name="beguda" value="refresc_suc" data-preu="1.20" required>
-            <label for="beguda_refresc_suc">
-              <span class="nomBeguda">🥤🧃 Refresc/Sucs</span>
-              <br>
-              <span class="preuBeguda">1.20€</span>
-            </label>
-
-            <input type="radio" id="beguda_aigua" name="beguda" data-preu="1.00" value="aigua">
-            <label for="beguda_aigua">
-              <span class="nomBeguda">💧 Aigua</span>
-              <br>
-              <span class="preuBeguda">1.00€</span>
-            </label>
-            <input type="radio" id="beguda_calent" name="beguda" data-preu="1.10" value="calent" required>
-            <label for="beguda_calent">
-              <span class="nomBeguda">☕🧉 Begudes calents</span>
-              <br>
-              <span class="preuBeguda">1.10€</span>
-            </label>
+          <div class="seleccio-visual" id="begudes">
           </div>
         </label>
         <br>
@@ -100,8 +67,9 @@
       </form>
     </div>
 
-    <script src="JS/index2.js"></script>
+    <script src="JS/index.js"></script>
     <script src="JS/obtenirPlats.js"></script>
+    <script src="JS/obtenirBegudes.js"></script>
     <script src="JS/script_menus.js"></script>
   </body>
 </html>

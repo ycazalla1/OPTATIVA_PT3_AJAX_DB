@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="CSS/styles.css"> -->
+    <link rel="stylesheet" href="CSS/alegics_styles.css">
+    <title>Llista d'Al·lèrgens</title>
+  </head>
+  <body>
+    <header>
+    <div class="header-container">
+      <h1 class="logo">La Cantina</h1>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="alergies.html">Al·lèrgens</a></li>
+            <li><a href="gestio_begudes.html">Gestió de Begudes</a></li>
+            <li><a href="login_client.html">Login Client</a></li>
+            <!-- <li><a href="magatzem.html">Magatzem</a></li> -->
+            <li><a href="menuSetmanal.html">Menu Setmanal</a></li>
+            <li><a href="plats_combinats.html">Plats Combinats</a></li>
+            <li><a href="registre_client.html">Registre Client</a></li>
+            <li><a href="usuaris.html">Usuaris</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="container">
+    <h1>Llista d'Al·lèrgens</h1>
+    
+    <form id="formAlergen">
+      <input type="text" id="inputAlergen" placeholder="Nou al·lèrgogen">
+      <button type="submit">Afegir</button>
+    </form>
+
+    <table id="taulaAlergens">
+      <thead>
+        <tr>
+          <th>Nom de l'Al·lèrgogen</th>
+          <th>Accions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Filas generades amb JS -->
+      </tbody>
+    </table>
+    <script src="JS/srcipts_list_alegics.js"></script>
+    <script src="JS/script_menus.js"></script>
+  </div>
+    
+  </body>
+</html>

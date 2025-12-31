@@ -1,5 +1,5 @@
 // Versión 1
-window.addEventListener("DOMContentLoaded", () => {
+/*window.addEventListener("DOMContentLoaded", () => {
   const usuariLoguejat = JSON.parse(localStorage.getItem("usuariLoguejat"));
 
   if (!usuariLoguejat) {
@@ -14,14 +14,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
         // Solo admin puede ver estas páginas
         const adminOnly = [
-        "usuaris.html",
-        "registre_admin.html",
-        "gestio_begudes.html",
-        "Plats_Combinats.html",
-        "plats_combinats2.html",
         "alergies.html",
-        "magatzem.html",
-        "menuSetmanal.html"
+        "gestio_begudes.html",
+        "login_client.html",
+        //"magatzem.html",
+        "menuSetmanal.html",
+        "plats_combinats.html",
+        "registre_client.html",
+        "usuaris.html"
         ];
 
         // Solo admin puede ver estas páginas
@@ -36,8 +36,8 @@ window.addEventListener("DOMContentLoaded", () => {
 //   if (afegirBtn && usuariLoguejat.rol !== "admin") {
 //     afegirBtn.style.display = "none";
 //   }
-});
-
+});*/
+/*
 // Versión 2
 window.addEventListener("DOMContentLoaded", () => {
   const usuariLoguejat = JSON.parse(localStorage.getItem("usuariLoguejat"));
@@ -76,5 +76,39 @@ window.addEventListener("DOMContentLoaded", () => {
         li.style.display = "none";
     }
     });
-});
+});*/
 
+// Versión 3
+window.addEventListener("DOMContentLoaded", () => {
+  const usuariLoguejat = JSON.parse(localStorage.getItem("usuariLoguejat"));
+  console.log(usuariLoguejat);
+
+  const menu = document.querySelector(".nav-menu");
+  if (!menu) return;
+
+  const menuItems = menu.querySelectorAll("li");
+
+  const adminOnly = [
+    "alergies.html",
+    "gestio_begudes.html",
+    //"magatzem.html",
+    "menuSetmanal.html",
+    "plats_combinats.html",
+    "usuaris.html"
+  ];
+
+  menuItems.forEach(li => {
+    const a = li.querySelector("a");
+    if (!a) return;
+
+    const link = a.getAttribute("href");
+    if (!link) return;
+
+    // Si NO hi ha usuari o NO és admin → ocultar opcions admin
+    if (!usuariLoguejat || usuariLoguejat.rol?.toLowerCase() !== "admin") {
+      if (adminOnly.includes(link)) {
+        li.style.display = "none";
+      }
+    }
+  });
+});

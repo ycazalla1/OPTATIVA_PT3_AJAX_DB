@@ -3,6 +3,7 @@ import express from "express";
 import path from "path"
 import { fileURLToPath } from "url";
 import platsCombinatsRouter from "./routes/platscombinats.js";
+import begudesRouter from "./routes/begudes.js";
 import menuCantinaRouter from "./routes/menuCantina.js";
 import usuariRouter from "./routes/usuarisRouter.js";
 
@@ -21,6 +22,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/api/menu_cantina", menuCantinaRouter);
 app.use("/api/plats_combinats", platsCombinatsRouter);
+app.use("/api/begudes", begudesRouter);
 app.use("/api/usuaris", usuariRouter);
 
 app.get('/', (req, res) => {

@@ -1,16 +1,3 @@
-// import express from "express"
-// import personesController from "../controllers/personasController.js";
-
-// const misrutas = express.Router();
- 
-// // GET todos las personas
-// misrutas.get("/", personesController.getPersones);
-// misrutas.post("/", personesController.altaPersona);
-// misrutas.post("/cerca", personesController.cercaPersones);
-
-
-// //module.exports = router;
-// export default misrutas;
 import db from "../db/webdb.js";
 
 import express from "express";

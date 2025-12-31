@@ -1,5 +1,4 @@
-/* estilos.css - Minimalista para gestió de plats combinats */
-
+/* estilos.css - CSS completo moderno y minimalista */
 :root {
   --bg: #f2f4f7;
   --card: #ffffff;
@@ -7,7 +6,7 @@
   --primary-hover: #1d4ed8;
   --text: #1e293b;
   --muted: #64748b;
-  --radius: 8px;
+  --radius: 12px;
 }
 
 * {
@@ -15,7 +14,7 @@
   font-family: 'Inter', system-ui, sans-serif;
 }
 
-body {
+html, body {
   margin: 0;
   padding: 0;
   background-color: var(--bg);
@@ -68,39 +67,21 @@ header {
   color: var(--primary);
 }
 
-/* MAIN */
-.container {
-  max-width: 900px;
-  margin: 30px auto;
-  padding: 0 20px;
-}
-
-/* TABLA */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 30px;
-}
-
-table th, table td {
-  padding: 10px;
-  border: 1px solid #e2e8f0;
-  text-align: left;
-}
-
-table th {
-  background-color: #e2e8f0;
-}
-
-/* FORMULARIO */
+/* 🔹 FORMULARIO */
 form {
-  background-color: var(--card);
-  padding: 20px;
+  background: var(--card);
+  padding: 40px 32px;
   border-radius: var(--radius);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.05);
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 40px auto 0 auto; /* margen superior para separarlo del header */
+  animation: fadeIn 0.4s ease-in-out;
 }
 
-form h1 {
+h1 {
   font-size: 1.3rem;
   text-align: center;
   margin-bottom: 10px;
@@ -108,11 +89,11 @@ form h1 {
 }
 
 label {
-  display: block;
-  margin-bottom: 10px;
   color: var(--muted);
+  font-size: 0.9rem;
 }
 
+/* 🔸 Campos de entrada uniformes */
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -121,11 +102,15 @@ input[type="number"],
 select,
 textarea {
   width: 100%;
-  padding: 8px 10px;
-  margin-top: 4px;
-  border: 1px solid #ccc;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
   border-radius: var(--radius);
   font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: #fff;
+  color: var(--text);
+  resize: vertical;
 }
 
 input:focus,
@@ -150,7 +135,7 @@ textarea {
   line-height: 1.4;
 }
 
-/* 🔹 Botó modern */
+/* 🔹 Botón moderno */
 button {
   background-color: var(--primary);
   color: white;
@@ -192,71 +177,4 @@ button:hover {
     margin-top: 20px;
     padding: 30px 20px;
   }
-}
-
-
-/* ACCIONES DE TABLA */
-td button {
-  padding: 5px 10px;
-  font-size: 0.85rem;
-  margin-right: 5px;
-}
-
-td button:hover {
-  background-color: var(--primary-hover);
-  color: white;
-}
-
-/* SELECCIÓ VISUAL (Específic del nostre formulari) */
-.seleccio-visual { 
-  display: flex; 
-  flex-wrap: wrap; 
-  gap: 6px; 
-  margin-top: 1px; 
-  justify-content: space-between; 
-}
-
-.seleccio-visual label {
-  width: calc(30% - 5px); 
-  border: 2px solid #e2e8f0; 
-  border-radius: var(--radius);
-  text-align: center; 
-  cursor: pointer; 
-  transition: all 0.3s ease; 
-  background-color: #fff;
-  font-weight: 500; 
-  color: var(--text);
-  padding: 4px 4px;     /* menos relleno */
-}
-
-section {
-  max-width: 500px; 
-  margin: 30px auto;
-}
-
-section p {
-  font-size: 0.75em; 
-  color: var(--muted); 
-  text-align: center; 
-  margin-top: 15px;
-}
-  
-.seleccio-visual label:hover {
-  border-color: var(--primary); /* Efecte HOVER amb blau primari */
-  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.3);
-}
-
-.seleccio-visual input[type="radio"] { 
-  display: none;
-}
-
-.seleccio-visual input[type="radio"]:checked + label {
-  border-color: var(--alergen-danger); /* Utilitzem el vermell per indicar selecció (per analogia al risc) */
-  background-color: #fef2f2; 
-  font-weight: 600;
-}
-.icona-producte { 
-  font-size: 20px; 
-  display: block; 
-  margin-bottom: 5px; 
 }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="cat">
+    
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="CSS/styles.css">
+  <title>Iniciar sessió (client)</title>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <h1 class="logo">La Cantina</h1>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="registre_client.html">Registre-se</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <br>
+  <form action="#" method="post" id="loginForm">
+    <h1>Iniciar sessió (client)</h1>
+    <label for="usuari">Email:<br>
+      <input type="email" name="usuario" id="usuari" required>
+    </label><br>
+    <label for="contrasena">Contrasenya:<br>
+      <input type="password" name="contrasena" id="contrasena" required>
+    </label><br><br>
+    <label id="missatge"></label>
+    <button type="submit" src="JS/scripts_logins.js">Iniciar sessió</button>
+  </form>
+  <script src="JS/scripts_logins.js"></script>
+  <script src="JS/script_menus.js"></script>
+</body>
+</html>

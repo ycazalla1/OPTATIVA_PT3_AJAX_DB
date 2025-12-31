@@ -48,7 +48,44 @@ routerUsuari.get("/comprovar/:email", async (req, res) => {
     // El email no existeix
     return res.json({ existeix: false });
   }
-})
+});
+
+// GET per iniciar sessió
+routerUsuari.post("/iniciSessio", async (req, res) => {
+  const { email, contrasenya } = req.body;
+  // Cercar usuari per l'email
+  const [rows] = await db.query(
+    `SELECT id, nom, cognoms, email, contrasenya, rol
+     FROM usuaris
+     WHERE email = ?`,
+    [email]
+  );
+
+  if (rows.length === 0) {
+    return res.status(401).json({ error: "Aquest correu electrònic no existeix." });
+  }
+
+  const usuari = rows[0];
+
+  // Comparar contrasenya
+  const correcte = await bcrypt.compare(contrasenya.trim(), usuari.contrasenya.trim());
+
+  if (!correcte) {
+    return res.status(401).json({ error: "Contrasenya incorrecta." });
+  }
+
+  // Login
+  res.json({
+    ok: true,
+    usuari: {
+      id: usuari.id,
+      nom: usuari.nom,
+      cognoms: usuari.cognoms,
+      email: usuari.email,
+      rol: usuari.rol
+    }
+  });
+});
 
 // POST per a inserir els usuaris
 routerUsuari.post("/", async (req, res) => {

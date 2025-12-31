@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="CSS/gestion_styles.css">
+        <title>La Cantina - Menú</title>
+    </head>
+    <body>
+        <header>
+            <div class="header-container">
+                <h1 class="logo">La Cantina</h1>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="alergies.html">Al·lèrgens</a></li>
+                        <li><a href="gestio_begudes.html">Gestió de Begudes</a></li>
+                        <li><a href="login_client.html">Login Client</a></li>
+                        <!-- <li><a href="magatzem.html">Magatzem</a></li> -->
+                        <li><a href="menuSetmanal.html">Menu Setmanal</a></li>
+                        <li><a href="plats_combinats.html">Plats Combinats</a></li>
+                        <li><a href="registre_client.html">Registre Client</a></li>
+                        <li><a href="usuaris.html">Usuaris</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="container">
+            <form>
+                <h1>Comanda</h1>
+                <div>
+                    <label>Plat:
+                    <select name="plat" required>
+                        <option value="">Tria el plat</option>
+                        <option>Entrepà de truita</option>
+                        <option>Entrepà de xoriço</option>
+                        <option>Frankfurt</option>
+                        <option>Croissant</option>
+                        <option>Refresc</option>
+                        <option>Café</option>
+                        <option>Aigua</option>
+                    </select></label>
+                </div>
+                <div>
+                    <label>Dia de la setmana:
+                    <select name="dia" required>
+                        <option value="">Tria el dia</option>
+                        <option value="dilluns">Dilluns</option>
+                        <option value="dimarts">Dimarts</option>
+                        <option value="dimecres">Dimecres</option>
+                        <option value="dijous">Dijous</option>
+                        <option value="divendres">Divendres</option>
+                    </select></label>
+                </div>
+                <button type="submit">Guardar</button>
+            </form>
+
+            <h1>Dilluns</h1>
+            <table border="1" cellpadding="5" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Plat</th>
+                        <th>Preu</th>
+                        <th>Alèrgens</th>
+                        <th>Accions</th>
+                    </tr>
+                </thead>
+            <tbody id="dilluns">
+                <tr></tr>
+                <tr></tr>
+            </tbody>
+            </table>
+
+            <h1>Dimarts</h1>
+            <table border="1" cellpadding="5" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Plat</th>
+                        <th>Preu</th>
+                        <th>Alèrgens</th>
+                        <th>Accions</th>
+                    </tr>
+                </thead>
+            <tbody id="dimarts">
+                <tr></tr>
+                <tr></tr>
+            </tbody>
+            </table>
+
+            <h1>Dimecres</h1>
+            <table border="1" cellpadding="5" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Plat</th>
+                        <th>Preu</th>
+                        <th>Alèrgens</th>
+                        <th>Accions</th>
+                    </tr>
+                </thead>
+            <tbody id="dimecres">
+                <tr></tr>
+                <tr></tr>
+            </tbody>
+            </table>
+
+            <h1>Dijous</h1>
+            <table border="1" cellpadding="5" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Plat</th>
+                        <th>Preu</th>
+                        <th>Alèrgens</th>
+                        <th>Accions</th>
+                    </tr>
+                </thead>
+            <tbody id="dijous">
+                <tr></tr>
+                <tr></tr>
+            </tbody>
+            </table>
+
+            <h1>Divendres</h1>
+            <table border="1" cellpadding="5" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Plat</th>
+                        <th>Preu</th>
+                        <th>Alèrgens</th>
+                        <th>Accions</th>
+                    </tr>
+                </thead>
+            <tbody id="divendres">
+                <tr></tr>
+                <tr></tr>
+            </tbody>
+            </table>
+    </div>
+    <script src="JS/script_menu_setmanal.js"></script>
+    <script src="JS/script_menus.js"></script>
+    </body>
+</html>

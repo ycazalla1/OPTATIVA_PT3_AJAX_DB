@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="CSS/gestion_styles.css">
+  
+  <title>Gestión Begudes</title>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <h1 class="logo">La Cantina</h1>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="alergies.html">Al·lèrgens</a></li>
+            <li><a href="gestio_begudes.html">Gestió de Begudes</a></li>
+            <li><a href="login_client.html">Login Client</a></li>
+            <!-- <li><a href="magatzem.html">Magatzem</a></li> -->
+            <li><a href="menuSetmanal.html">Menu Setmanal</a></li>
+            <li><a href="plats_combinats.html">Plats Combinats</a></li>
+            <li><a href="registre_client.html">Registre Client</a></li>
+            <li><a href="usuaris.html">Usuaris</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <br>
+  <div class="container">
+    <h1>Begudes</h1>
+    <table border="1" cellpadding="5" cellspacing="0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Tipus</th>
+          <th>Preu (€)</th>
+          <th>Stock</th>
+          <th>Accions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr> </tr>
+        <tr> </tr>
+      </tbody>
+    </table>
+
+    <form action="#" method="post">
+      <h1>Afegir Beguda</h1>
+
+      <!-- Nom de la beguda -->
+      <label>Nom: <input type="text" name="nombre" required></label><br>
+
+      <!-- Tipus de beguda -->
+      <label>
+        Tipus:
+        <div class="seleccio-visual">
+          <input type="radio" id="tipusBeguda_refresc" name="tipusBeguda" value="refresc" required>
+          <label for="tipusBeguda_refresc">
+            <span class="icona-producte">🥤</span> Refresc</label>
+
+          <input type="radio" id="tipusBeguda_begudaCalent" name="tipusBeguda" value="begudaCalent" required>
+          <label for="tipusBeguda_begudaCalent">
+            <span class="icona-producte">☕🧉</span> Beguda calent</label>
+
+          <input type="radio" id="tipusBeguda_suc" name="tipusBeguda" value="suc" required>
+          <label for="tipusBeguda_suc">
+            <span class="icona-producte">🧃</span> Suc</label>
+          
+          <input type="radio" id="tipusBeguda_aigua" name="tipusBeguda" value="aigua" required>
+          <label for="tipusBeguda_aigua">
+            <span class="icona-producte">💧</span> Aigua</label>
+        </div>
+      </label><br>
+
+      <!-- Preu -->
+      <label>Preu (€): <input type="number" name="precio" step="0.01" required></label><br>
+      
+      <!-- Stock -->
+      <label>Stock: <input type="number" name="stock" required></label><br>
+      <button type="submit" src="JS/srcipts_begudes.js" >Afegir/Actualitzar beguda</button>
+
+      <script src="JS/srcipts_begudes.js"></script>
+      <script src="JS/script_menus.js"></script>
+    </form>
+
+  </div>
+</body>
+</html>

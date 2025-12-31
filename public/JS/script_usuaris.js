@@ -16,7 +16,7 @@ async function carregarUsuaris() {
 
   if (usuaris.length === 0) {
     taulaBody.innerHTML =
-      `<tr><td colspan="7" class="nota">Encara no hi han usuaris registrats.</td></tr>`;
+      `<tr><td colspan="7" style="text-align:center;">Encara no hi han usuaris registrats.</td></tr>`;
     return;
   }
 
@@ -50,7 +50,7 @@ function mostrarMissatgeCapUsuaris() {
 
 // --- ELIMINAR ---
 async function eliminarUsuari(id) {
-  if (!confirm("Eliminar plat?")) return;
+  if (!confirm("Eliminar usuari?")) return;
 
   try {
     const res = await fetch(`/api/usuaris/${id}`, { method: "DELETE" });
@@ -125,11 +125,6 @@ async function submitForm(e) {
     carregarUsuaris();
   } else {
     // --- AFEGIR ---
-    // if (usuarisRegistrats.some(u => u.email.toLowerCase() === email.toLowerCase())) {
-    //   alert("Ja existeix un usuari amb aquest correu electrònic.");
-    //   return;
-    // }
-
     const resEmail = await fetch(`/api/usuaris/comprovar/${encodeURIComponent(email.trim())}`);
     const data = await resEmail.json();
     if (data.existeix) {

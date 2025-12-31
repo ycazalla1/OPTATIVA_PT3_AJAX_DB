@@ -1,4 +1,4 @@
-async function mostrarPlats() {
+async function mostrarPlat() {
     const res = await fetch("/api/plats_combinats");
     const plats = await res.json();
     console.log(plats);
@@ -49,4 +49,4 @@ function seleccioMenu(p) {
     div.appendChild(document.createElement("br"));
 }
 
-document.addEventListener("DOMContentLoaded", mostrarPlats);
+document.addEventListener("DOMContentLoaded", mostrarPlat);

@@ -13,6 +13,3 @@ export const pool = mysql.createPool({
 
 export default pool;
 
-// //EXEMPLE
-// const pool = getMySQL();
-// const [rows] = await pool.query("SELECT * FROM usuarios WHERE activo = ?", [1]);

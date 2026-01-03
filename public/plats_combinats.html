@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="CSS/gestion_combi_styles.css">
+    <script src="JS/combinats.js" defer></script>
+    <title>Gestió de Plats Combinats</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-container">
+        <h1 class="logo">La Cantina</h1>
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="alergies.html">Al·lèrgens</a></li>
+            <li><a href="gestio_begudes.html">Gestio Begudes</a></li>
+            <li><a href="login_client.html">Login Client</a></li>
+            <li><a href="magatzem.html">Magatzem</a></li>
+            <li><a href="menuSetmanal.html">Menu Setmanal</a></li>
+            <li><a href="Plats_Combinats.html">Plats Combinats</a></li>
+            <li><a href="registre_admin.html">Registre Admin</a></li>
+            <li><a href="registre_client.html">Registre Client</a></li>
+            <li><a href="seleccio_plats_user_admin.html">Seleccio Plats</a></li>
+            <li><a href="usuaris.html">Usuaris</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <br>
+
+    <div class="container">
+      <h1>Plats Combinats</h1>
+
+      <!-- TAULA -->
+      <table>
+        <thead>
+          <tr>
+            <!-- <th>ID</th> -->
+            <th>Plat Principal</th>
+            <th>Acompanyament 1</th>
+            <th>Acompanyament 2</th>
+            <th>Al·lèrgens</th>
+            <th>Preu</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-combinats"></tbody>
+      </table>
+
+      <!-- FORMULARI -->
+      <form id="formulariPlat" action="#" method="post">
+        <h2>Afegir Plat Combinat</h2>
+
+        <label>
+          Plat Principal:
+          <input type="text" name="nom" id="nom" required>
+        </label>
+
+        <!-- Acompanyament 1 -->
+        <label>
+          Acompanyament 1:
+          <div class="seleccio-visual">
+
+            <input type="radio" id="patates_base" name="acomp1" value="Patates Fregides" required>
+            <label for="patates_base">
+              <span class="icona-producte">🍟</span> Patates fregides</label>
+
+            <input type="radio" id="ou_fregit" name="acomp1" value="Ou Fregit" required>
+            <label for="ou_fregit"><span class="icona-producte">🍳</span> Ou fregit</label>
+
+            <input type="radio" id="carn" name="acomp1" value="Bacon" required>
+            <label for="carn"><span class="icona-producte">🥓</span> Bacon</label>
+
+            <input type="radio" id="gambes" name="acomp1" value="Gambes" required>
+            <label for="gambes"><span class="icona-producte">🍤</span> Gambes saltejades</label>
+
+            <input type="radio" id="truita_francesa" name="acomp1" value="Truita Francesa" required>
+            <label for="truita_francesa">
+              <span class="icona-producte">🍳</span> Truita francesa
+            </label>
+
+            <input type="radio" id="truita_patates" name="acomp1" value="Truita de Patates" required >
+            <label for="truita_patates">
+              <span class="icona-producte">🥔</span> Truita de patates
+            </label>
+
+            <input type="radio" id="ous_verdures" name="acomp1" value="Ous remenats amb verdures" required>
+            <label for="ous_verdures">
+              <span class="icona-producte">🥚</span> Ous remenats amb verdures
+            </label>
+          </div>
+        </label>
+
+        <!-- Acompanyament 2 -->
+        <label>
+          Acompanyament 2:
+          <div class="seleccio-visual">
+            <input type="radio" id="amanida" name="acomp2" value="Amanida" required>
+            <label for="amanida">
+              <span class="icona-producte">🥗</span> Amanida
+            </label>
+
+            <input type="radio" id="arros_blanc" name="acomp2" value="Arròs Blanc" required>
+            <label for="arros_blanc">
+              <span class="icona-producte">🍚</span> Arròs Blanc
+            </label>
+            <input type="radio" id="amanida_pasta" name="acomp2" value="Amanida de Pasta" required>
+            <label for="amanida_pasta">
+              <span class="icona-producte">🥗🍝</span> Amanida de pasta
+            </label>
+            <input type="radio" id="verdures_planxa" name="acomp2" value="Verdures a la planxa" required>
+            <label for="verdures_planxa">
+              <span class="icona-producte">🥦</span> Verdures a la planxa
+            </label>
+
+            <input type="radio" id="pure_patata" name="acomp2" value="Puré de patata" required>
+            <label for="pure_patata">
+              <span class="icona-producte">🥔</span> Puré de patata
+            </label>
+
+            <input type="radio" id="cuscus" name="acomp2" value="Cuscús" required>
+            <label for="cuscus">
+              <span class="icona-producte">🍲</span> Cuscús
+            </label>
+
+            <input type="radio" id="fideus" name="acomp2" value="Fideus" required>
+            <label for="fideus">
+              <span class="icona-producte">🍜</span> Fideus
+            </label>
+
+          </div>
+        </label>
+
+        <label>
+          Preu (€):
+          <input type="number" name="precio" step="0.01" required>
+        </label>
+
+        <br>
+        <button type="submit">Afegir Plat</button>
+      </form>
+    </div>
+
+    <!-- <script src="JS/combinats.js"></script> -->
+    
+  </body>
+</html>

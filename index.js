@@ -6,6 +6,7 @@ import platsCombinatsRouter from "./routes/platscombinats.js";
 import begudesRouter from "./routes/begudes.js";
 import menuCantinaRouter from "./routes/menuCantina.js";
 import usuariRouter from "./routes/usuarisRouter.js";
+import magatzemRouter from "./routes/magatzemRouter.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/api/menu_cantina", menuCantinaRouter);
 app.use("/api/plats_combinats", platsCombinatsRouter);
 app.use("/api/begudes", begudesRouter);
+app.use("/api/magatzem", magatzemRouter);
 app.use("/api/usuaris", usuariRouter);
 
 app.get('/', (req, res) => {

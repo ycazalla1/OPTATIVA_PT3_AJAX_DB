@@ -33,8 +33,8 @@ function seleccioMenu(p) {
     label.innerHTML = `
         <span class="nomMenu">
             ${p.nom}<br>
-            ${p.acompanamient1 ?? "—"}<br>
-            ${p.acompanamient2 ?? "—"}
+            ${p.acompanyament1 ?? "—"}<br>
+            ${p.acompanyament2 ?? "—"}
         </span><br>
         <span class="alergiesMenu">
             ${p.alergies ?? "Cap al·lèrgen"}

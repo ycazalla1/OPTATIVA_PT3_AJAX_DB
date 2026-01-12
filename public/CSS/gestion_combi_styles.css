@@ -1,4 +1,4 @@
-/* estilos.css - Minimalista para gestió de plats combinats */
+/* estilos.css - Minimalista para gestión de bebidas */
 
 :root {
   --bg: #f2f4f7;
@@ -150,7 +150,7 @@ textarea {
   line-height: 1.4;
 }
 
-/* 🔹 Botó modern */
+/* 🔹 Botón moderno */
 button {
   background-color: var(--primary);
   color: white;
@@ -259,4 +259,30 @@ section p {
   font-size: 20px; 
   display: block; 
   margin-bottom: 5px; 
+}
+
+
+.popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #4caf50; /* verde para info/éxito */
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 1000;
+}
+.popup.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.popup.error {
+  background: #f44336; /* rojo para error */
+}
+.popup.info {
+  background: #4caf50; /* verde para info */
 }

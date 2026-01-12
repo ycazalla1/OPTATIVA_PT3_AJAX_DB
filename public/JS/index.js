@@ -1,10 +1,4 @@
 // --- GESTIÓ DE MAGATZEM ---
-let platsRegistrats = [];
-
-// --- FUNCIONS LOCALSTORAGE ---
-function guardarPlatsALocalStorage() {
-  localStorage.setItem("platsCantina", JSON.stringify(platsRegistrats));
-}
 
 async function carregarMenu() {
   const res = await fetch("/api/menu_cantina");
@@ -12,7 +6,6 @@ async function carregarMenu() {
 
   const tbody = document.querySelector("table tbody");
   tbody.innerHTML = "";
-
   
   if (plats.length === 0) {
     tbody.innerHTML =

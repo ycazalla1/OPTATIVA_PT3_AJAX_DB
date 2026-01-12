@@ -44,4 +44,13 @@ formLogin.addEventListener("submit", async (e) => {
   setTimeout(() => {
     window.location.href = "index.html";
   }, 1000);
+
+  setTimeout(() => {
+    tancamentSessio();
+  }, 3600000);
 });
+
+function tancamentSessio() {
+  localStorage.removeItem("usuariLoguejat");
+  window.location.href = "login_client.html";
+}

@@ -1,12 +1,4 @@
 // --- GESTIÓ DE BEGUDES ---
-
-//let begudesRegistrades = [];
-
-// --- FUNCIONS LOCALSTORAGE ---
-// function guardarItemsALocalStorage() {
-//   localStorage.setItem("begudesCantina", JSON.stringify(itemsRegistrats));
-// }
-
 async function carregarBegudes() {
   //const dadesGuardades = localStorage.getItem("begudesCantina");
   const res = await fetch("/api/begudes");

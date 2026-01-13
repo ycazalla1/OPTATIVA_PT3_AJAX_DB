@@ -1,15 +1,15 @@
 // --- GESTIÓ DE MAGATZEM ---
 
 async function carregarMenu() {
-  const res = await fetch("/api/menu_cantina");
-  const plats = await res.json();
+  const resPlats = await fetch("/api/menu_cantina");
+  const plats = await resPlats.json();
 
   const tbody = document.querySelector("table tbody");
   tbody.innerHTML = "";
   
   if (plats.length === 0) {
     tbody.innerHTML =
-      `<tr><td colspan="6" style="text-align:center;">Encara no hi han menús</td></tr>`;
+      `<tr><td colspan="8" style="text-align:center;">Encara no hi han menús</td></tr>`;
     return;
   }
 
@@ -19,10 +19,12 @@ async function carregarMenu() {
 
 function mostrarMenu(p) {
   const tbody = document.querySelector("table tbody");
-
+  
   console.log(p);
   const tr = document.createElement("tr");
   tr.innerHTML = `
+    <td>${p.id}</td>
+    <td>${p.nom}</td>
     <td>${p.menu ?? "—"}</td>
     <td>${p.beguda ?? "—"}</td>
     <td>${p.alergens && p.alergens !== "0" ? p.alergens : "Cap al·lèrgen"}</td>
@@ -89,12 +91,14 @@ document.querySelector("form").addEventListener("submit", async e => {
   const lblMenu = menuCantina.nextElementSibling;
   const lblBeguda = beguda.nextElementSibling;
 
+  const u = JSON.parse(localStorage.getItem("usuariLoguejat"));
   // Enviar dades al backend
   try {
     const res = await fetch("/api/menu_cantina", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
+        nom: u.nom,
         menu: `${lblMenu.querySelector(".nomMenu").textContent.trim()}`,
         beguda: `${lblBeguda.querySelector(".nomBeguda").textContent.trim()}`,
         alergens: alergensMenu, //[...new Set(alergies)].join(", "),

@@ -10,7 +10,7 @@ routerMenuCantina.get("/", llistarMenus);
 // GET tots els plats
 routerMenuCantina.get("/", async (req, res) => {
   const [rows] = await db.query(`
-                                SELECT id, menu, beguda, alergens, quantitat, preu 
+                                SELECT id, nom, menu, beguda, alergens, quantitat, preu 
                                 FROM menu_cantina
                               `);
   console.log(rows);
@@ -34,12 +34,12 @@ routerMenuCantina.patch("/:id/quantitat", async (req, res) => {
 // POST per a inserir
 routerMenuCantina.post("/", async (req, res) => {
   console.log(req.body);
-  const { menu, beguda, alergens, quantitat, preu } = req.body;
+  const { nom, menu, beguda, alergens, quantitat, preu } = req.body;
   await db.query(
     `INSERT INTO menu_cantina
-     (menu, beguda, alergens, quantitat, preu)
-     VALUES (?, ?, ?, ?, ?)`,
-    [menu, beguda, alergens, quantitat, preu]
+     (nom, menu, beguda, alergens, quantitat, preu)
+     VALUES (?, ?, ?, ?, ?, ?)`,
+    [nom, menu, beguda, alergens, quantitat, preu]
   );
   res.json({ ok: true });
 });

@@ -9,7 +9,7 @@ async function carregarMenu() {
   
   if (plats.length === 0) {
     tbody.innerHTML =
-      `<tr><td colspan="6" class="nota">Encara no hi ha plats</td></tr>`;
+      `<tr><td colspan="6" style="text-align:center;">Encara no hi han menús</td></tr>`;
     return;
   }
 
@@ -23,7 +23,6 @@ function mostrarMenu(p) {
   console.log(p);
   const tr = document.createElement("tr");
   tr.innerHTML = `
-    <td>${p.id}</td>
     <td>${p.menu ?? "—"}</td>
     <td>${p.beguda ?? "—"}</td>
     <td>${p.alergens && p.alergens !== "0" ? p.alergens : "Cap al·lèrgen"}</td>
@@ -31,7 +30,7 @@ function mostrarMenu(p) {
     <td>${Number(p.preu).toFixed(2)} €</td>
     <td>
       <button onclick="incrementarMenu(${p.id})">➕</button>
-      <button onclick="eliminarPlat(${p.id})">🗑️</button>
+      <button onclick="eliminarMenu(${p.id})">🗑️</button>
     </td>
   `;
   tbody.appendChild(tr);
@@ -115,4 +114,9 @@ document.querySelector("form").addEventListener("submit", async e => {
 });
 
 // --- CÀRREGA INICIAL ---
-window.addEventListener("DOMContentLoaded", carregarMenu);
+if (localStorage.getItem("usuariLoguejat")) {
+  console.log(localStorage.getItem("usuariLoguejat"));
+  window.addEventListener("DOMContentLoaded", carregarMenu);
+} else {
+  window.location.href = "login_client.html";
+}

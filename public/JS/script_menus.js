@@ -32,3 +32,18 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+function comprovarSessio() {
+  const usuari = JSON.parse(localStorage.getItem("usuariLoguejat"));
+
+  if (!usuari || Date.now() > usuari.expira) {
+    tancamentSessio();
+  }
+}
+
+comprovarSessio();
+
+function tancamentSessio() {
+  localStorage.clear("usuariLoguejat");
+  window.location.href = "login_client.html";
+}

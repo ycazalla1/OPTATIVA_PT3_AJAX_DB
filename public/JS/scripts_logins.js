@@ -8,10 +8,7 @@ formLogin.addEventListener("submit", async (e) => {
   const password = document.getElementById("contrasena").value;
   const missatge = document.getElementById("missatge");
 
-  //let usuaris = JSON.parse(localStorage.getItem("usuarisCantina")) || [];
-
   // Cercar usuari
-  //const usuari = usuaris.find(u => u.email === email && u.contrasenya === password);
   const resInciarSessio = await fetch("/api/usuaris/iniciSessio", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -42,15 +39,16 @@ formLogin.addEventListener("submit", async (e) => {
   missatge.style.color = "green";
 
   setTimeout(() => {
+    const DURACIO_SESSIO = 3600000;
+
+    localStorage.setItem("usuariLoguejat", JSON.stringify({
+      email: data.usuari.email,
+      rol: data.usuari.rol,
+      nom: data.usuari.nom,
+      cognom: data.usuari.cognom,
+      expira: Date.now() + DURACIO_SESSIO
+    }));
+
     window.location.href = "index.html";
   }, 1000);
-
-  setTimeout(() => {
-    tancamentSessio();
-  }, 3600000);
 });
-
-function tancamentSessio() {
-  localStorage.removeItem("usuariLoguejat");
-  window.location.href = "login_client.html";
-}

@@ -23,7 +23,6 @@ function mostrarItem(i) {
   console.log(i);
   const tr = document.createElement("tr");
   tr.innerHTML = `
-    <td>${i.id}</td>
     <td>${convertirDataAOutput(i.data)}</td>
     <td>${i.producte}</td>
     <td>${i.stock}</td>

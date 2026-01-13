@@ -29,7 +29,6 @@ function mostrarUsuari(u) {
   console.log(u.rol);
   const tr = document.createElement("tr");
   tr.innerHTML = `
-    <td>${u.id}</td>
     <td>${u.nom}</td>
     <td>${u.cognoms}</td>
     <td>${u.email}</td>
@@ -111,11 +110,11 @@ async function submitForm(e) {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        nom: `${usuari.nom.trim()}`,
-        cognoms: `${usuari.cognoms.trim()}`,
-        email: `${usuari.email.trim()}`,
-        contrasenya: `${usuari.contrasenya.trim()}`,
-        rol: `${usuari.rol}`
+        nom: `${nom.trim()}`,
+        cognoms: `${cognom.trim()}`,
+        email: `${email.trim()}`,
+        contrasenya: `${contrasenya.trim()}`,
+        rol: `${rol}`
       })
     });
 
